@@ -1,0 +1,3 @@
+docker run -e MYSQL_ROOT_PASSWORD=test -e MYSQL_DATABASE=wordpress --name wordpressdb -d mariadb:latest
+
+docker run -e WORDPRESS_DB_USER=root -e WORDPRESS_DB_PASSWORD=test --name wordpress --link wordpressdb:mysql -p 80:80 -d wordpress
